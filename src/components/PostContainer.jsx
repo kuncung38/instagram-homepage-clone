@@ -19,7 +19,8 @@ const PostContainer = () => {
 
     return (
         <main className="flex flex-col gap-4">
-            <PostSingle post={data[0]} />
+            {data?.length &&
+                data.map((el) => <PostSingle key={el.id} post={el} />)}
         </main>
     );
 };
